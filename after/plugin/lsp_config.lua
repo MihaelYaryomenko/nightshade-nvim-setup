@@ -1,6 +1,12 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = {"lua_ls", "clangd"}
+	ensure_installed = {"lua_ls", "clangd", "ast_grep", "eslint"}
+})
+
+require"lspconfig".eslint.setup{}
+
+require"lspconfig".ast_grep.setup({
+	ft = { "js" },
 })
 
 require("gcompilecommands").setup({
